@@ -12,3 +12,16 @@ volumeIcon.addEventListener('click', function() {
     // Change the icon based on the mute state
     volumeIcon.src = video.muted ? './assets/mute volume icon.jpg' : './assets/volume.jpg';
 });
+
+// Redirects to home page after login
+const form = document.getElementById('login-form');
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent the default form submission
+
+    const usernameInput = document.getElementById('username');
+    if (usernameInput.value.trim()) { 
+        // Redirect to home.html
+        window.location.href = 'home.html';
+    }
+});

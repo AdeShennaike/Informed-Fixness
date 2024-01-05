@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Informed Fixness</title>
-<link rel="stylesheet" href="./style.css">
-<link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+<link rel="stylesheet" href="./login.css">
+<link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon_io/favicon-16x16.png">
 <link rel="manifest" href="./assets/favicon_io/site.webmanifest">
-<script src="./app.js" async defer></script>
+<script src="./login.js" async defer></script>
 </head>
 <body>
     <video autoplay loop muted playsinline id="background-video">
@@ -20,7 +20,7 @@
             <img src="./assets/new gym logo.jpg" alt="Informed Fitness">
         </div>
         <h2>Sign In</h2>
-        <form action="/submit-your-login-form" method="post">
+        <form id="login-form">
             <div class="input-group">
                 <input type="email" id="username" name="username" placeholder="Username" required>
             </div>
