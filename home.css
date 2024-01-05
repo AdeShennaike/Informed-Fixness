@@ -1,0 +1,45 @@
+body, h1, input, button {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  body {
+    background-color: #f0f9ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  select {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    text-align-last: center;
+    font-weight: bold;
+    -moz-appearance: none; /* Remove default styling Firefox */
+    -webkit-appearance: none; /* Remove default styling for Chrome/Safari */
+    appearance: none;
+    cursor: pointer;
+  }
+
+  select option {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  button {
+    width: 80%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
