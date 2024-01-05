@@ -10,7 +10,7 @@ volumeIcon.addEventListener('click', function() {
     video.muted = !video.muted;
 
     // Change the icon based on the mute state
-    volumeIcon.src = video.muted ? './assets/mute volume icon.jpg' : './assets/volume.jpg';
+    volumeIcon.src = video.muted ? '../assets/mute volume icon.jpg' : '../assets/volume.jpg';
 });
 
 // Redirects to home page after login
