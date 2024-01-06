@@ -5,8 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Search Button Listener
   // ***********************
   // Elements
-  const selectElement = document.getElementById('muscle-group'); // The select dropdown
-  const searchButton = document.getElementById('search-button'); // The search button
+  const selectElement = document.getElementById('muscle-group'); // select dropdown
+  const searchButton = document.getElementById('search-button'); // search button
+  const greetParagraph = document.getElementById('greeting'); // h1
   
   const heroUrl = 'https://informed-fixness-d570fbe159e8.herokuapp.com/'
   
@@ -15,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     axios.get(`${heroUrl}exercise/${muscleGroup}`)
       .then(response => {
         
-        console.log(response.data);
+        console.log(response.data.exercise[0]);
       })
       .catch(error => {
         
@@ -35,3 +36,17 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
   
+// ***********************
+// Mute Button
+// *********************** 
+const video = document.getElementById('background-video');
+const volumeIcon = document.getElementById('volume-icon');
+
+// Click event listener to the volume icon
+volumeIcon.addEventListener('click', function() {
+    // Toggle the 'muted' property of the video
+    video.muted = !video.muted;
+
+    // Change the icon based on the mute state
+    volumeIcon.src = video.muted ? '../assets/mute volume icon.jpg' : '../assets/volume.jpg';
+});

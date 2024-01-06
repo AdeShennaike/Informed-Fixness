@@ -9,14 +9,18 @@
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon_io/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon_io/favicon-16x16.png">
 <link rel="manifest" href="../assets/favicon_io/site.webmanifest">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="../javascript/home.js" type="module" defer></script>
 </head>
 <body>
+  <video autoplay loop id="background-video">
+    <source src="../assets/889F87B7-4CD3-47DE-871E-246050C2E7AA.MOV" type="video/mp4">
+  </video>
   <div class="logout-container">
     <button id="logout-button">Logout</button>
   </div>
-    <h1>Greetings potential meathead, what muscle would you like to work in hopes of being less puny?</h1>
+    <h1 id="greeting">Greetings potential meathead, what muscle would you like to work in hopes of being less puny?</h1>
     <select name="muscle-group" id="muscle-group">
       <option value="abdominals">Abdominals</option>
       <option value="abductors">Abductors</option>
@@ -35,6 +39,8 @@
       <option value="traps">Traps</option>
       <option value="triceps">Triceps</option>
     </select>         
-  <button id="search-button">Search</button>
+    <button id="search-button">Search</button>
+    <img src="../assets/volume.jpg" alt="Volume Icon" id="volume-icon">
+    
 </body>
 </html>

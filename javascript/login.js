@@ -1,5 +1,5 @@
 // ***********************
-// Volume Button
+// Mute Button
 // *********************** 
 const video = document.getElementById('background-video');
 const volumeIcon = document.getElementById('volume-icon');

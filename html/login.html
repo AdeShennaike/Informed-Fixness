@@ -12,7 +12,7 @@
 <script src="../javascript/login.js" async defer></script>
 </head>
 <body>
-    <video autoplay loop muted playsinline id="background-video">
+    <video autoplay loop playsinline id="background-video">
         <source src="../assets/7C807E07-4311-4C06-BBDF-CA382E92AFD4.MOV" type="video/mp4">
     </video>
     <div class="login-container">
@@ -24,8 +24,12 @@
             <div class="input-group">
                 <input type="email" id="username" name="username" placeholder="Username" required>
             </div>
+            <div class="input-group">
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
             <button type="submit" class="btn-login">Sign In</button>
         </form>
+        <button type="button" class="btn-signup">Sign Up</button>
     </div>
     <img src="../assets/volume.jpg" alt="Volume Icon" id="volume-icon">
 </body>

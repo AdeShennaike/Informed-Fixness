@@ -46,7 +46,7 @@ body {
     margin-bottom: 8px;
 }
 
-/* .btn-signup {
+.btn-signup {
     background-color: transparent;
     color: #ec407a;
     border: none;
@@ -54,7 +54,11 @@ body {
     cursor: pointer;
     width: 100%;
     border-radius: 4px;
-} */
+    margin-top: 8px;
+    text-decoration: none; 
+    display: inline-block;
+    font-weight: bold;
+}
 
 h2 {
     color: #333;

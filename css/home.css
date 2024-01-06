@@ -2,49 +2,50 @@ body, h1, input, button {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-  }
-  body {
-    background-color: #f0f9ff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  h1 {
-    color: #333;
-    margin-bottom: 20px;
-  }
-  select {
-    width: 80%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    text-align-last: center;
-    font-weight: bold;
-    -moz-appearance: none; /* Remove default styling Firefox */
-    -webkit-appearance: none; /* Remove default styling for Chrome/Safari */
-    appearance: none;
-    cursor: pointer;
-  }
+}
 
-  select option {
-    text-align: center;
-    font-weight: bold;
-  }
+body {
+  background-color: #f0f9ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-  #search-button {
-    width: 80%;
-    padding: 10px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-  }
+h1 {
+  color: whitesmoke;
+  margin-bottom: 20px;
+}
 
-  /* Existing styles... */
+select {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  text-align-last: center;
+  font-weight: bold;
+  -moz-appearance: none; /* Remove default styling Firefox */
+  -webkit-appearance: none; /* Remove default styling for Chrome/Safari */
+  appearance: none;
+  cursor: pointer;
+}
+
+select option {
+  text-align: center;
+  font-weight: bold;
+}
+
+#search-button {
+  width: 80%;
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
 
 .logout-container {
   position: absolute;
@@ -63,4 +64,23 @@ body, h1, input, button {
   cursor: pointer;
   font-family: Arial, sans-serif;
   font-weight: bold;
+}
+
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+#volume-icon {
+  position: absolute;
+  left: 0; 
+  bottom: 0; 
+  width: 50px;
+  height: auto; 
+  z-index: 10; 
 }
