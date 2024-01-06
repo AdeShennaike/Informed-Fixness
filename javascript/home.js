@@ -1,21 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const selectElement = document.getElementById('muscle-group'); // The select dropdown
-    const searchButton = document.getElementById('search-button'); // The search button
-    const axios = require('axios').default; // Make sure to include Axios
-    const heroUrl = 'https://informed-fixness-d570fbe159e8.herokuapp.com/'
+  console.log("DOM fully loaded and parsed");
   
-    searchButton.addEventListener('click', () => {
-        console.log("click")
-      const muscleGroup = selectElement.value;
-      const response = axios.get(`https://informed-fixness-d570fbe159e8.herokuapp.com/exercise/${muscleGroup}`)
-        .then(response => {
-          // Handle success
-          console.log(response.data);
-        })
-        .catch(error => {
-          // Handle error
-          console.error('Error fetching exercises:', error);
-        });
-    });
+  // ***********************
+  // Search Button Listener
+  // ***********************
+  // Elements
+  const selectElement = document.getElementById('muscle-group'); // The select dropdown
+  const searchButton = document.getElementById('search-button'); // The search button
+  
+  const heroUrl = 'https://informed-fixness-d570fbe159e8.herokuapp.com/'
+  
+  searchButton.addEventListener('click', () => {
+    const muscleGroup = selectElement.value;
+    axios.get(`${heroUrl}exercise/${muscleGroup}`)
+      .then(response => {
+        
+        console.log(response.data);
+      })
+      .catch(error => {
+        
+        console.error('Error fetching exercises:', error);
+      });
   });
+
+// ***********************
+// Logout Button Listener
+// ***********************
+  const logoutButton = document.getElementById('logout-button');
+  
+  logoutButton.addEventListener('click', () => {
+
+    // Redirect to login page
+    window.location.href = 'login.html';
+  });
+});
   
