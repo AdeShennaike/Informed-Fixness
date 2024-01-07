@@ -22,6 +22,6 @@ form.addEventListener('submit', (event) => {
     const usernameInput = document.getElementById('username');
     if (usernameInput.value.trim()) { 
         // Redirect to search.html
-        window.location.href = './html/search.html';
+        window.location.href = 'search.html';
     }
 });
