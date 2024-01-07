@@ -56,6 +56,9 @@ select option {
 }
 
 #logout-button {
+  position: fixed;
+  top: 20px; /* Adjust as needed */
+  right: 20px; /* Adjust as needed */
   padding: 10px;
   background-color: #007BFF;
   color: white;
@@ -64,7 +67,9 @@ select option {
   cursor: pointer;
   font-family: Arial, sans-serif;
   font-weight: bold;
+  z-index: 100; /* Ensure it is above other content */
 }
+
 
 #background-video {
   position: fixed;
@@ -106,4 +111,9 @@ select option {
 .nav-item img {
   width: 24px;
   margin-bottom: 4px;
+}
+
+.results-container {
+  overflow-y: auto; /* Allows vertical scrolling if content overflows */
+  max-height: 80vh; /* Adjust height as needed */
 }
