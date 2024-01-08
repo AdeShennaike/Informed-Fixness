@@ -185,29 +185,6 @@ h1 {
   text-decoration: underline;
 }
 
-/* .delete-button {
-  background-color: red;
-  color: white;
-  border: none; 
-  padding: 10px 20px; 
-  border-radius: 5px; 
-  cursor: pointer; 
-} */
-
-/* .update-button {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 8px;
-} */
-
 .update-button, .delete-button {
   color: white;
   padding: 10px;
@@ -216,17 +193,17 @@ h1 {
   border: none;
   text-align: center;
   display: inline-block;
-  width: 48%; /* Adjust the width percentage so both buttons can fit on the same line */
+  /* width: 48%; */
   margin: 1%;
   transition: background-color 0.3s ease;
 }
 
 .update-button {
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50; 
 }
 
 .delete-button {
-  background-color: #f44336; /* Red */
+  background-color: #f44336;
 }
 
 /* Hover effects */
@@ -296,23 +273,23 @@ h1 {
 /* Responsive styles */
 @media (max-width: 600px) {
   .update-button, .delete-button {
-    width: 100%; /* Take full width on smaller screens */
-    margin: 5px 0; /* Stack vertically with space between */
+    width: 100%;
+    margin: 5px 0; 
   }
 }
 
 /* Styles for smaller screens */
 @media (max-width: 768px) {
   .update-button, .delete-button {
-    width: 100%; /* Each button takes full width on smaller screens */
-    margin-bottom: 10px; /* Add some space between stacked buttons */
+    width: 100%; 
+    margin-bottom: 10px;
   }
 }
 
 /* Styles for even smaller screens, such as mobile devices in portrait mode */
 @media (max-width: 480px) {
   .update-button, .delete-button {
-    font-size: 14px; /* Smaller font size to ensure text fits within the buttons */
-    padding: 10px 5px; /* Adjust padding to maintain button size */
+    font-size: 14px; 
+    padding: 10px 5px; 
   }
 }

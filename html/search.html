@@ -91,6 +91,46 @@
       <textarea id="exerciseInstructions" placeholder="Instructions"></textarea>
       <button type="submit">Add Exercise</button>
     </form>
+    
+<div id="updateModal" class="modal">
+  <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h2>Edit Exercise</h2>
+      <input type="text" id="exerciseName" placeholder="Exercise Name">
+      <input type="text" id="exerciseDetails" placeholder="Exercise Details">
+      <select id="equipmentSelect">
+          <option value="">Select Equipment</option>
+          <option value="dumbbell">Dumbbell</option>
+        <option value="barbell">Barbell</option>
+        <option value="kettlebell">Kettlebell</option>
+        <option value="cable">Cable</option>
+        <option value="machine">Machine</option>
+        <option value="other">Other</option>
+        <option value="body_only">Body Only</option>
+        <option value="none">None</option>
+      </select>
+      <select id="muscleGroupSelect">
+          <option value="">Select Muscle Group</option>
+          <option value="abdominals">Abdominals</option>
+          <option value="abductors">Abductors</option>
+          <option value="adductors">Adductors</option>
+          <option value="biceps">Biceps</option>
+          <option value="calves">Calves</option>
+          <option value="chest">Chest</option>
+          <option value="forearms">Forearms</option>
+          <option value="glutes">Glutes</option>
+          <option value="hamstrings">Hamstrings</option>
+          <option value="lats">Lats</option>
+          <option value="lower_back">Lower back</option>
+          <option value="middle_back">Middle back</option>
+          <option value="neck">Neck</option>
+          <option value="quadriceps">Quadriceps</option>
+          <option value="traps">Traps</option>
+          <option value="triceps">Triceps</option>
+      </select>
+      <button id="saveExercise">Save Changes</button>
+  </div>
+</div>
   </div>
 </div>
 
