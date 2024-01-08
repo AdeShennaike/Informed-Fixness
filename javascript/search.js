@@ -8,6 +8,80 @@ document.addEventListener('DOMContentLoaded', () => {
   const selectElement = document.getElementById('muscle-group'); // select dropdown
   const searchButton = document.getElementById('search-button'); // search button
   const heroUrl = 'https://informed-fixness-d570fbe159e8.herokuapp.com/'
+
+  //Functions
+  // Function to create the detail page
+  function createDetailPage(exercise) {
+    // Clear the current content
+    document.body.innerHTML = '';
+
+    // Create the close button
+    const closeButton = document.createElement('button');
+    closeButton.textContent = 'X';
+    closeButton.className = 'close-button';
+    closeButton.onclick = function() {
+      window.location.reload(); // Reload the page to go back to the search results
+    };
+    closeButton.style.position = 'absolute';
+    closeButton.style.top = '20px';
+    closeButton.style.right = '20px';
+    document.body.appendChild(closeButton);
+
+    // Function to delete an exercise
+function deleteExercise(exerciseId) {
+  axios.delete(`${heroUrl}exercise/${exerciseId}`)
+    .then(response => {
+      console.log('Exercise deleted', response);
+      window.location.reload();
+    })
+    .catch(error => {
+      console.error('Error deleting exercise:', error);
+    });
+}
+
+// Add the event listener to the delete button
+const deleteButton = document.createElement('button');
+deleteButton.textContent = 'Delete';
+deleteButton.className = 'delete-button'
+deleteButton.onclick = function() {
+  console.log(exercise._id)
+  deleteExercise(exercise._id);
+};
+
+// Add the delete button to the DOM
+document.body.appendChild(deleteButton);
+
+    // Create the title
+    const title = document.createElement('h1');
+    title.textContent = exercise.name;
+    title.className = 'result-title';
+    document.body.appendChild(title);
+
+    // Create a container for the image and text overlay
+  const imageContainer = document.createElement('div');
+  imageContainer.className = 'result-image-container'; // Assign class for styling
+  
+  // Add the image to the container
+  const image = document.createElement('img');
+  image.src = '../assets/1B050E86-1466-43F0-9524-5ADF8F8EFB49.jpg'; // Replace with your image source
+  image.className = 'result-image'; // Ensure this class sets the image to cover the container
+  imageContainer.appendChild(image);
+
+  // Create a text element to overlay on the image
+  const imageText = document.createElement('div');
+  imageText.className = 'result-image-text'; // Assign class for styling
+  imageText.textContent = 'MESSAGE FROM THE CREATOR: There were way too many exercises to have an image for each, If only there was a search engine that allowed you to find one....'; // Replace with your text
+  imageContainer.appendChild(imageText);
+
+  // Append the image container to the body or a specific section
+  document.body.appendChild(imageContainer);
+
+  // Create the description
+  const description = document.createElement('p');
+  description.textContent = exercise.instructions;
+  description.className = 'result-description';
+  document.body.appendChild(description);
+  }
   
   searchButton.addEventListener('click', () => {
     // Clear existing results if they exist
@@ -53,17 +127,22 @@ document.addEventListener('DOMContentLoaded', () => {
           
           // // Add image
           // const exerciseImg = document.createElement('img');
-          // exerciseImg.src = exer.imageUrl; // Replace with your image property
+          // exerciseImg.src = exer.imageUrl; // 
           // exerciseCard.appendChild(exerciseImg);
           
           // Add title
           const exerciseTitle = document.createElement('h2');
-          exerciseTitle.textContent = exer.name; // Replace with your title property
+          exerciseTitle.className = 'exercise-title';
+          exerciseTitle.textContent = exer.name;
+          exerciseTitle.onclick = function() {
+            createDetailPage(exer); 
+          };
           exerciseCard.appendChild(exerciseTitle);
           
           // Add description
           const exerciseDesc = document.createElement('p');
-          exerciseDesc.textContent = exer.instructions; // Replace with your description property
+          exerciseDesc.className = 'exercise-description';
+          exerciseDesc.textContent = exer.instructions;
           exerciseCard.appendChild(exerciseDesc);
           
           // Append the card to the results container
@@ -164,30 +243,3 @@ document.getElementById('search-icon').addEventListener('click', () => {
       resultsContainer.remove();
     }
   });
-
-
-// ***********************
-// Background Video Loop  
-// ***********************
-// const videos = [
-//   '../assets/7C807E07-4311-4C06-BBDF-CA382E92AFD4.MOV',
-//   '../assets/889F87B7-4CD3-47DE-871E-246050C2E7AA.MOV'
-// ];
-
-// let currentVideoIndex = 0;
-
-// const videoElement = document.getElementById('background-video');
-// const sourceElement = videoElement.querySelector('source');
-
-// // Function to play the next video
-// function playNextVideo() {
-//   currentVideoIndex = (currentVideoIndex + 1) % videos.length; // Loop back to the first video
-//   sourceElement.src = videos[currentVideoIndex];
-//   videoElement.load();
-//   videoElement.play();
-// }
-
-// videoElement.addEventListener('ended', playNextVideo);
-
-// // Start the first video
-// playNextVideo();
