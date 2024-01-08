@@ -133,27 +133,37 @@ document.getElementById('search-icon').addEventListener('click', () => {
     document.body.insertBefore(video, document.body.firstChild);
   }
 
-  // Check if the icon exist then Recreate and add the icon
+  function toggleMute() {
+    const video = document.getElementById('background-video');
+    if (video) {
+        video.muted = !video.muted;
+        document.getElementById('volume-icon').src = video.muted ? '../assets/mute volume icon.jpg' : '../assets/volume.jpg';
+    }
+  }
+
+  // Initial setup for the mute button
+  const initialVolumeIcon = document.getElementById('volume-icon');
+  if (initialVolumeIcon) {
+      initialVolumeIcon.addEventListener('click', toggleMute);
+  }
+
+  // When re-creating the volume icon
   if (!document.getElementById('volume-icon')) {
-    const volumeIcon = document.createElement('img');
-    volumeIcon.src = '../assets/volume.jpg';
-    volumeIcon.alt = 'Volume Icon';
-    volumeIcon.id = 'volume-icon';
-    document.body.appendChild(volumeIcon);
+      const volumeIcon = document.createElement('img');
+      volumeIcon.src = '../assets/volume.jpg';
+      volumeIcon.alt = 'Volume Icon';
+      volumeIcon.id = 'volume-icon';
+      volumeIcon.addEventListener('click', toggleMute);
+      document.body.appendChild(volumeIcon);
   }
 
-  // Add event listener to new volume icon (similar to previous one)
-  volumeIcon.addEventListener('click', function() {
-    video.muted = !video.muted;
-    volumeIcon.src = video.muted ? '../assets/mute volume icon.jpg' : '../assets/volume.jpg';
+
+    // Remove the search results
+    const resultsContainer = document.querySelector('.results-container');
+    if (resultsContainer) {
+      resultsContainer.remove();
+    }
   });
-
-  // Remove the search results
-  const resultsContainer = document.querySelector('.results-container');
-  if (resultsContainer) {
-    resultsContainer.remove();
-  }
-});
 
 
 // ***********************
