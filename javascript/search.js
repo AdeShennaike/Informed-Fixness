@@ -30,10 +30,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  
   // Handle the add exercise form submission
   document.getElementById('addExerciseForm').onsubmit = function(event) {
     event.preventDefault();
+    const exerciseName = document.getElementById('exerciseName').value;
+    const muscleGroup = document.getElementById('muscleGroupSelect').value;
+    const equipment = document.getElementById('equipmentSelect').value;
+    const instructions = document.getElementById('exerciseInstructions').value;
+    const exerciseData = {name: exerciseName,
+      muscle_group: muscleGroup,
+      equipment: equipment,
+      instructions: instructions
+    }
     
+    axios.post(`${heroUrl}exercise`, exerciseData)
+    .then(response => {
+      console.log('Exercise Added');
+      window.location.reload();
+    })
+    .catch(error => {
+      console.error('Error adding exercise:', error);
+    });
   };
 
   // ***********************
