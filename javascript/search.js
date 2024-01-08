@@ -10,6 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroUrl = 'https://informed-fixness-d570fbe159e8.herokuapp.com/'
   
   searchButton.addEventListener('click', () => {
+    // Clear existing results if they exist
+    let existingResultsContainer = document.querySelector('.results-container');
+    if (existingResultsContainer) {
+      existingResultsContainer.remove();
+    }
+
     const muscleGroup = selectElement.value;
     const greetingElement = document.getElementById('greeting');
     const backgroundVideo = document.getElementById('background-video');
