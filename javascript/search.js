@@ -2,6 +2,41 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log("DOM fully loaded and parsed");
   
   // ***********************
+  // Modal to add exercise
+  // ***********************
+  // Get the modal element
+  const addExerciseModal = document.getElementById('addExerciseModal');
+
+  // Get the button that opens the modal
+  const postIcon = document.getElementById('post-icon');
+
+  // Get the <span> element that closes the modal
+  const closeModal = document.getElementsByClassName("close")[0];
+
+  // When the user clicks the button, open the modal 
+  postIcon.onclick = function() {
+    addExerciseModal.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  closeModal.onclick = function() {
+    addExerciseModal.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target === addExerciseModal) {
+      addExerciseModal.style.display = "none";
+    }
+  }
+
+  // Handle the add exercise form submission
+  document.getElementById('addExerciseForm').onsubmit = function(event) {
+    event.preventDefault();
+    
+  };
+
+  // ***********************
   // Search Button Listener
   // ***********************
   // Elements
@@ -28,48 +63,47 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(closeButton);
 
     // Function to delete an exercise
-function deleteExercise(exerciseId) {
-  axios.delete(`${heroUrl}exercise/${exerciseId}`)
-    .then(response => {
-      console.log('Exercise deleted', response);
-      window.location.reload();
-    })
-    .catch(error => {
-      console.error('Error deleting exercise:', error);
-    });
-}
+  function deleteExercise(exerciseId) {
+    axios.delete(`${heroUrl}exercise/${exerciseId}`)
+      .then(response => {
+        console.log('Exercise deleted');
+        window.location.reload();
+      })
+      .catch(error => {
+        console.error('Error deleting exercise:', error);
+      });
+  }
 
-// Add the event listener to the delete button
-const deleteButton = document.createElement('button');
-deleteButton.textContent = 'Delete';
-deleteButton.className = 'delete-button'
-deleteButton.onclick = function() {
-  console.log(exercise._id)
-  deleteExercise(exercise._id);
-};
+  // Add the event listener to the delete button
+  const deleteButton = document.createElement('button');
+  deleteButton.textContent = 'Delete';
+  deleteButton.className = 'delete-button'
+  deleteButton.onclick = function() {
+    deleteExercise(exercise._id);
+  };
 
-// Add the delete button to the DOM
-document.body.appendChild(deleteButton);
+  // Add the delete button to the DOM
+  document.body.appendChild(deleteButton);
 
-    // Create the title
-    const title = document.createElement('h1');
-    title.textContent = exercise.name;
-    title.className = 'result-title';
-    document.body.appendChild(title);
+  // Create the title
+  const title = document.createElement('h1');
+  title.textContent = exercise.name;
+  title.className = 'result-title';
+  document.body.appendChild(title);
 
-    // Create a container for the image and text overlay
+  // Create a container for the image and text overlay
   const imageContainer = document.createElement('div');
-  imageContainer.className = 'result-image-container'; // Assign class for styling
+  imageContainer.className = 'result-image-container';
   
   // Add the image to the container
   const image = document.createElement('img');
-  image.src = '../assets/1B050E86-1466-43F0-9524-5ADF8F8EFB49.jpg'; // Replace with your image source
-  image.className = 'result-image'; // Ensure this class sets the image to cover the container
+  image.src = '../assets/1B050E86-1466-43F0-9524-5ADF8F8EFB49.jpg';
+  image.className = 'result-image'; 
   imageContainer.appendChild(image);
 
   // Create a text element to overlay on the image
   const imageText = document.createElement('div');
-  imageText.className = 'result-image-text'; // Assign class for styling
+  imageText.className = 'result-image-text';
   imageText.textContent = 'MESSAGE FROM THE CREATOR: There were way too many exercises to have an image for each, If only there was a search engine that allowed you to find one....'; // Replace with your text
   imageContainer.appendChild(imageText);
 
@@ -97,8 +131,6 @@ document.body.appendChild(deleteButton);
 
     axios.get(`${heroUrl}exercise/${muscleGroup}`)
       .then(response => {
-        console.log(response.data.exercise)
-        
         
         // remove the greeting and video and mute button
         // check if it exists before trying to remove an element

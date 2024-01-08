@@ -50,9 +50,38 @@
         <span>Saved</span>
       </div>
       <div class="nav-item">
-        <img src="../assets/setting.png" alt="Filter" id="settings-icon">
-        <span>Filter</span>
+        <img src="../assets/setting.png" alt="Post" id="post-icon">
+        <span>Post</span>
       </div>
     </div>
+<div id="addExerciseModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <form id="addExerciseForm">
+      <input type="text" id="exerciseName" placeholder="Exercise Name" required>
+      <select id="muscleGroupSelect" required>
+        <option value="abdominals">Abdominals</option>
+        <option value="abductors">Abductors</option>
+        <option value="adductors">Adductors</option>
+        <option value="biceps">Biceps</option>
+        <option value="calves">Calves</option>
+        <option value="chest">Chest</option>
+        <option value="forearms">Forearms</option>
+        <option value="glutes">Glutes</option>
+        <option value="hamstrings">Hamstrings</option>
+        <option value="lats">Lats</option>
+        <option value="lower_back">Lower back</option>
+        <option value="middle_back">Middle back</option>
+        <option value="neck">Neck</option>
+        <option value="quadriceps">Quadriceps</option>
+        <option value="traps">Traps</option>
+        <option value="triceps">Triceps</option>
+      </select>
+      <textarea id="exerciseInstructions" placeholder="Instructions"></textarea>
+      <button type="submit">Add Exercise</button>
+    </form>
+  </div>
+</div>
+
 </body>
 </html>
