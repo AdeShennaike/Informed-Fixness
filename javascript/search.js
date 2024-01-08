@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   }
 
-  // Add the event listener to the delete button
+  // create delete button and Add the event listener to the delete button
   const deleteButton = document.createElement('button');
   deleteButton.textContent = 'Delete';
   deleteButton.className = 'delete-button'
@@ -102,6 +102,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Add the delete button to the DOM
   document.body.appendChild(deleteButton);
+
+  function updateExercise(exerciseId) {
+    axios.put(`${heroUrl}exercise/${exerciseId}`, )
+    .then(response => {
+      window.location.reload();
+    })
+    .catch(error => {
+      console.error('Error deleting exercise:', error);
+    });
+  }
+
+  // Create the update button
+  const updateButton = document.createElement('button');
+  updateButton.textContent = 'Update';
+  updateButton.className = 'update-button';
+  updateButton.onclick = function() {
+    addExerciseModal.style.display = "block";
+      updateExercise(exercise._id)
+  };
+
+  // Add the update button to the page
+  document.body.appendChild(updateButton);
 
   // Create the title
   const title = document.createElement('h1');
