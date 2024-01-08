@@ -92,24 +92,23 @@
       <button type="submit">Add Exercise</button>
     </form>
     
-<div id="updateModal" class="modal">
-  <div class="modal-content">
-      <span class="close-button">&times;</span>
-      <h2>Edit Exercise</h2>
-      <input type="text" id="exerciseName" placeholder="Exercise Name">
-      <input type="text" id="exerciseDetails" placeholder="Exercise Details">
-      <select id="equipmentSelect">
+    <div id="updateModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Edit Exercise</h2>
+        <input type="text" id="exerciseName" placeholder="Exercise Name">
+        <select id="equipmentSelect">
           <option value="">Select Equipment</option>
           <option value="dumbbell">Dumbbell</option>
-        <option value="barbell">Barbell</option>
-        <option value="kettlebell">Kettlebell</option>
-        <option value="cable">Cable</option>
-        <option value="machine">Machine</option>
-        <option value="other">Other</option>
-        <option value="body_only">Body Only</option>
-        <option value="none">None</option>
-      </select>
-      <select id="muscleGroupSelect">
+          <option value="barbell">Barbell</option>
+          <option value="kettlebell">Kettlebell</option>
+          <option value="cable">Cable</option>
+          <option value="machine">Machine</option>
+          <option value="other">Other</option>
+          <option value="body_only">Body Only</option>
+          <option value="none">None</option>
+        </select>
+        <select id="muscleGroupSelect">
           <option value="">Select Muscle Group</option>
           <option value="abdominals">Abdominals</option>
           <option value="abductors">Abductors</option>
@@ -127,10 +126,11 @@
           <option value="quadriceps">Quadriceps</option>
           <option value="traps">Traps</option>
           <option value="triceps">Triceps</option>
-      </select>
-      <button id="saveExercise">Save Changes</button>
-  </div>
-</div>
+        </select>
+        <textarea id="exerciseDetails" placeholder="Instructions"></textarea>
+        <button id="saveExercise">Save Changes</button>
+      </div>
+    </div>
   </div>
 </div>
 

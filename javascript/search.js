@@ -6,30 +6,30 @@ document.addEventListener('DOMContentLoaded', () => {
   // ***********************
   // Get the modal element
   const addExerciseModal = document.getElementById('addExerciseModal');
-
+  
   // Get the button that opens the modal
   const postIcon = document.getElementById('post-icon');
-
+  
   // Get the <span> element that closes the modal
   const closeModal = document.getElementsByClassName("close")[0];
-
+  
   // When the user clicks the button, open the modal 
   postIcon.onclick = function() {
     addExerciseModal.style.display = "block";
   }
-
+  
   // When the user clicks on <span> (x), close the modal
   closeModal.onclick = function() {
     addExerciseModal.style.display = "none";
   }
-
+  
   // When the user clicks anywhere outside of the modal, close it
   window.onclick = function(event) {
     if (event.target === addExerciseModal) {
       addExerciseModal.style.display = "none";
     }
   }
-
+  
   
   // Handle the add exercise form submission
   document.getElementById('addExerciseForm').onsubmit = function(event) {
@@ -53,6 +53,78 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Error adding exercise:', error);
     });
   };
+
+  // ***********************
+  // Modal to edit exercise
+  // ***********************
+  
+//   // Elements from your page
+//   const updateButton = document.getElementById('update-button');
+//   const modal = document.getElementById('updateModal');
+//   const closeButton = document.getElementsByClassName('close-button')[0];
+//   const saveButton = document.getElementById('saveExercise');
+
+// // Inputs and selects in the modal
+// const exerciseNameInput = document.getElementById('exerciseName');
+// const exerciseDetailsInput = document.getElementById('exerciseDetails');
+// const equipmentSelect = document.getElementById('equipmentSelect');
+// const muscleGroupSelect = document.getElementById('muscleGroupSelect');
+
+// // Example data - replace this with the actual way you retrieve the selected exercise's data
+// const selectedExerciseData = {
+//     name: 'exercise.name',
+//     details: 'exercise.instructions',
+//     equipment: 'exercise.equipment',
+//     muscleGroup: 'exercise.muscle_group'
+// };
+
+// // Function to populate the modal with data
+// function populateModal(data) {
+//     exerciseNameInput.value = data.name;
+//     exerciseDetailsInput.value = data.details;
+//     equipmentSelect.value = data.equipment;
+//     muscleGroupSelect.value = data.muscleGroup;
+// }
+
+// // Open the modal and populate it with data
+// updateButton.addEventListener('click', () => {
+//     modal.style.display = 'block';
+//     populateModal(selectedExerciseData);
+// });
+
+// // Close the modal
+// closeButton.addEventListener('click', () => {
+//     modal.style.display = 'none';
+// });
+
+// // Save changes
+// saveButton.addEventListener('click', () => {
+//     const updatedData = {
+//         name: exerciseNameInput.value,
+//         muscleGroup: muscleGroupSelect.value,
+//         equipment: equipmentSelect.value,
+//         instructions: exerciseDetailsInput.value
+//     };
+
+//     // request to server
+//     axios.put(`${heroUrl}exercise`, updatedData)
+//     .then(response => {
+//       window.location.reload();
+//     })
+//     .catch(error => {
+//       console.error('Error updating exercise:', error);
+//     });
+
+//     // Close the modal after saving
+//     modal.style.display = 'none'; 
+// });
+
+// // Close modal if clicked outside of it
+// window.addEventListener('click', (event) => {
+//     if (event.target == modal) {
+//         modal.style.display = 'none';
+//     }
+// });
 
   // ***********************
   // Search Button Listener
@@ -85,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
     axios.delete(`${heroUrl}exercise/${exerciseId}`)
       .then(response => {
         console.log('Exercise deleted');
-        window.location.reload();
+        window.location.reload(); // Reload the page to go back to the search results
       })
       .catch(error => {
         console.error('Error deleting exercise:', error);
@@ -117,6 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const updateButton = document.createElement('button');
   updateButton.textContent = 'Update';
   updateButton.className = 'update-button';
+  updateButton.id = 'update-button';
   updateButton.onclick = function() {
     addExerciseModal.style.display = "block";
       updateExercise(exercise._id)
@@ -262,7 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Search Icon event
   // *********************** 
   // Event listener for the search icon in the bottom nav
-document.getElementById('search-icon').addEventListener('click', () => {
+  document.getElementById('search-icon').addEventListener('click', () => {
   // Check if the greeting exist then Recreate and add the greeting
   if (!document.getElementById('greeting')) {
     const greeting = document.createElement('h1');

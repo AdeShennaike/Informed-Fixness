@@ -149,7 +149,7 @@ h1 {
   text-align: center;
   font-size: 24px;
   color: #333;
-  margin-top: 50px; 
+  margin-top: 3px; 
 }
 
 .result-image {
@@ -193,7 +193,7 @@ h1 {
   border: none;
   text-align: center;
   display: inline-block;
-  /* width: 48%; */
+  width: 48%;
   margin: 1%;
   transition: background-color 0.3s ease;
 }
@@ -254,14 +254,18 @@ h1 {
 
 #addExerciseForm input,
 #addExerciseForm select,
-#addExerciseForm textarea {
+#addExerciseForm textarea,
+#exerciseName,
+#exerciseDetails,
+#equipmentSelect,
+#muscleGroupSelect {
   padding: 10px;
   margin-bottom: 10px; 
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-#addExerciseForm button {
+#addExerciseForm button,#saveExercise {
   padding: 10px;
   background-color: #007BFF;
   color: white;
