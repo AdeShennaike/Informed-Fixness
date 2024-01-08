@@ -112,29 +112,35 @@ document.addEventListener('DOMContentLoaded', () => {
   // *********************** 
   // Event listener for the search icon in the bottom nav
 document.getElementById('search-icon').addEventListener('click', () => {
-  // Recreate and add the greeting
-  const greeting = document.createElement('h1');
-  greeting.id = 'greeting';
-  greeting.textContent = 'Greetings potential meathead, what muscle would you like to work in hopes of being less puny?';
-  document.body.insertBefore(greeting, document.body.firstChild);
+  // Check if the greeting exist then Recreate and add the greeting
+  if (!document.getElementById('greeting')) {
+    const greeting = document.createElement('h1');
+    greeting.id = 'greeting';
+    greeting.textContent = 'Greetings potential meathead, what muscle would you like to work in hopes of being less puny?';
+    document.body.insertBefore(greeting, document.body.firstChild);
+  }
 
-  // Recreate and add the video
-  const video = document.createElement('video');
-  video.autoplay = true;
-  video.loop = true;
-  video.id = 'background-video';
-  const source = document.createElement('source');
-  source.src = '../assets/889F87B7-4CD3-47DE-871E-246050C2E7AA.MOV';
-  source.type = 'video/mp4';
-  video.appendChild(source);
-  document.body.insertBefore(video, document.body.firstChild);
+  // Check if the video exist then Recreate and add the video
+  if (!document.getElementById('background-video')) {
+    const video = document.createElement('video');
+    video.autoplay = true;
+    video.loop = true;
+    video.id = 'background-video';
+    const source = document.createElement('source');
+    source.src = '../assets/889F87B7-4CD3-47DE-871E-246050C2E7AA.MOV';
+    source.type = 'video/mp4';
+    video.appendChild(source);
+    document.body.insertBefore(video, document.body.firstChild);
+  }
 
-  // Recreate the volume icon
-  const volumeIcon = document.createElement('img');
-  volumeIcon.src = '../assets/volume.jpg';
-  volumeIcon.alt = 'Volume Icon';
-  volumeIcon.id = 'volume-icon';
-  document.body.appendChild(volumeIcon);
+  // Check if the icon exist then Recreate and add the icon
+  if (!document.getElementById('volume-icon')) {
+    const volumeIcon = document.createElement('img');
+    volumeIcon.src = '../assets/volume.jpg';
+    volumeIcon.alt = 'Volume Icon';
+    volumeIcon.id = 'volume-icon';
+    document.body.appendChild(volumeIcon);
+  }
 
   // Add event listener to new volume icon (similar to previous one)
   volumeIcon.addEventListener('click', function() {
