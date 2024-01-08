@@ -114,6 +114,20 @@ select option {
 }
 
 .results-container {
-  overflow-y: auto; /* Allows vertical scrolling if content overflows */
-  max-height: 80vh; /* Adjust height as needed */
+  background-image: url('../assets/pngtree-black-and-white-gym-room-with-a-row-of-equipment-image_2911173.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;   
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+.results-container p {
+  color: #ffffff; /* Pure white */
+  text-shadow: 1px 1px 2px #000000; /* Black shadow for better legibility */
+}
+
+.results-container h2 {
+  color: #ffffff; /* Pure white */
+  text-shadow: 1px 1px 2px #000000; /* Black shadow for better legibility */
 }
